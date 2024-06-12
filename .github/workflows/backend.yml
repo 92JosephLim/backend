@@ -42,6 +42,10 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      # Grant execute permission for gradlew
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
       # Spring Application 빌드
       - name: Build With Gradle
         uses: gradle/gradle-build-action@v2
