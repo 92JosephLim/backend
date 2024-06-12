@@ -52,6 +52,19 @@ jobs:
         with:
           arguments: clean bootJar
 
+      - name: Build Docker Compose
+        run: docker-compose
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::533267226721:role/backendrole
+          role-session-name: sampleSessionName
+          aws-region: ap-northeast-2
+
+
+
+
       # DOCKER HUB 로그인
       - name: Login to DockerHub
         uses: docker/login-action@v1
