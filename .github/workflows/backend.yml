@@ -22,7 +22,7 @@ jobs:
           distribution: 'temurin'
       # Spring Application 빌드
       - name: Build With Gradle
-        uses: gradle/gradle-build-action@latest
+        uses: gradle/gradle-build-action@67421db6db0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: clean bootJar
       # DOCKER HUB 로그인
