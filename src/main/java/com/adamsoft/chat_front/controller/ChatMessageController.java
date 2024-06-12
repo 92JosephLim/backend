@@ -21,7 +21,7 @@ public class ChatMessageController {
     public void sendMessage(@DestinationVariable String roomId, Message message) {
         // 메시지를 데이터베이스에 저장
         messageRepository.save(message);
-        // 메s
+        // 메ss
 
         // 메시지를 클라이언트에 전송
         messagingTemplate.convertAndSend("/topic/rooms/" + roomId, message.getContent());
