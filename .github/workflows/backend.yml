@@ -20,13 +20,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
       # Spring Application 빌드
       - name: Build With Gradle
-        uses: gradle/gradle-build-action@67421db0bd0bf253fb4bd25b31ebb98943c375e1
+        uses: gradle/gradle-build-action@latest
         with:
           arguments: clean bootJar
-
       # DOCKER HUB 로그인
       - name: Login to DockerHub
         uses: docker/login-action@v1
